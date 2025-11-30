@@ -3,15 +3,24 @@
 #include "buku.h";
 #include <iostream>;
 using namespace std;
-typedef struct penulis *infotype;
-typedef struct elmlist *adrpenulis;
+typedef struct penulis infotype;
+typedef struct elmlistP *addressP;
+typedef struct elmslistC *addressC;
+
 struct penulis{
   string idpenulis;
   string namapenulis;
   int bukuterbit;
 };
-struct elmlist{
-  adrpenulis first;
+
+struct elmlistP{
+  infotype info;
+  addressP next;
+  addressC firstChild;
+};
+
+struct Listparent{
+  addressP first;
 };
 
 
