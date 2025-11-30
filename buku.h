@@ -2,15 +2,23 @@
 #define BUKU_H_INCLUDED
 #include <iostream>;
 using namespace std;
-typedef struct Buku *infotype;
-typedef struct elmslist *adrbuku;
+typedef struct Buku infotypeBuku;
+typedef struct elmslistBuku *adrbuku;
+
 struct Buku{
   string idBuku;
   string judulBuku;
   int tahun;
 };
-struct elmlist{
-  adrbuku first;
+
+struct elmlistBuku{
+  infotypeBuku info;
+  adrbuku next;
+  adrbuku prev;
+};
+
+struct ListBuku{
+  adrBuku first;
   adrbuku last;
 };
 
