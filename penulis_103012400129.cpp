@@ -65,9 +65,9 @@ void viewPenulis(listPenulis L){
             cout << "Data Penulis ke-" << i << endl;
             cout << "ID Penulis   : " << P->infoPenulis.idPenulis << endl;
             cout << "Nama Penulis : " << P->infoPenulis.nama << endl;
-            cout << "Tahun Lahir  : " << P->infoPenulis.tahunLahir << endl;
+            cout << "Buku Terbit  : " << P->infoPenulis.bukuTerbit << endl;
 
-            // Hitung jumlah buku
+            // Menghitung jumlah buku
             int count = 0;
             adrBuku B = P->firstBuku;
             while(B != nullptr){

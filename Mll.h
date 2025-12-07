@@ -55,7 +55,7 @@ void viewPenulis(listPenulis L);
 
 // Child : Buku
 void createListBuku(adrPenulis P);
-adrBuku createElemenBuku(buku X);
+adrBuku createElmBuku(string idBuku, string judulBuku, int tahunTerbit);
 bool isEmptyBuku(adrPenulis P);
 
 void insertFirstBuku(adrPenulis P, adrBuku B);
