@@ -3,16 +3,16 @@
 void createListPenulis(listPenulis &L){
     L.first = nullptr;
 }
-adrPenulis createElemenPenulis(penulis X){
-    adrPenulis P = new elemenPenulis;
-
-    P->infoPenulis = X;
+adrpenulis createElmPenulis(string idPenulis, string namaPenulis, int bukuTerbit){
+    adrpenulis P = new elmlistPenulis;
+    P->info.idpenulis = idPenulis;
+    P->info.namapenulis= namaPenulis;
+    P->info.bukuterbit=bukuTerbit;
     P->next = nullptr;
-    P->firstBuku = nullptr;
-    P->lastBuku = nullptr;
-
+    P->firstBook = nullptr;
     return P;
 }
+
 void insertFirstPenulis(listPenulis &L, adrPenulis P){
     if (L.first == nullptr) {
         L.first = P;

@@ -17,6 +17,7 @@ void deleteFirstBuku(adrPenulis P, adrBuku &B) {
         }
         B->next = nullptr;
         B->prev = nullptr;
+        P->info.bukuTerbit--;
     }
 }
 void deleteLastBuku(adrPenulis P,adrBuku &B){
@@ -40,6 +41,7 @@ void deleteLastBuku(adrPenulis P,adrBuku &B){
 
         B->prev = nullptr;
         B->next = nullptr;
+        P->info.bukuTerbit--;
     }
 }
 void deleteAfterBuku(adrPenulis P, adrBuku prec, adrBuku &B){
@@ -68,7 +70,6 @@ void deleteAfterBuku(adrPenulis P, adrBuku prec, adrBuku &B){
         }
         B->next = nullptr;
         B->prev = nullptr;
-    } else {
-        B = nullptr ;
+        P->info.bukuTerbit--;
     }
 }

@@ -16,7 +16,7 @@ struct buku {
 struct penulis {
     string idPenulis;
     string nama;
-    int tahunLahir;
+    int bukuTerbit;
 };
 
 struct elemenBuku {
@@ -39,7 +39,7 @@ struct listPenulis {
 
 // Parent : Penulis
 void createListPenulis(listPenulis &L);
-adrPenulis createElemenPenulis(penulis X);
+adrPenulis createElemenPenulis(string idPenulis, string namaPenulis, int bukuTerbit);
 bool isEmptyPenulis(listPenulis L);
 
 void insertFirstPenulis(listPenulis &L, adrPenulis P);

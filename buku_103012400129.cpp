@@ -5,9 +5,11 @@ void createListBuku(adrPenulis P){
     P->lastBuku  = nullptr;
 }
 
-adrBuku createElemenBuku(buku X){
+adrBuku createElmBuku(string idBuku, string judulBuku, int tahunTerbit){
     adrBuku B = new elemenBuku;
-    B->infoBuku = X;
+    B->infoBuku.idBuku      = idBuku;
+    B->infoBuku.judul       = judulBuku;
+    B->infoBuku.tahunTerbit = tahunTerbit;
     B->next = nullptr;
     B->prev = nullptr;
     return B;
