@@ -37,6 +37,40 @@ struct listPenulis {
 };
 
 
+// Parent : Penulis
+void createListPenulis(listPenulis &L);
+adrPenulis createElemenPenulis(penulis X);
+bool isEmptyPenulis(listPenulis L);
+
+void insertFirstPenulis(listPenulis &L, adrPenulis P);
+void insertLastPenulis(listPenulis &L, adrPenulis P);
+void insertAfterPenulis(listPenulis &L, adrPenulis prec, adrPenulis P);
+
+void deleteFirstPenulis(listPenulis &L, adrPenulis &P);
+void deleteLastPenulis(listPenulis &L, adrPenulis &P);
+void deleteAfterPenulis(listPenulis &L, adrPenulis prec, adrPenulis &P);
+
+adrPenulis findElemenPenulis(listPenulis L, string idPenulis);
+void viewPenulis(listPenulis L);
+
+// Child : Buku
+void createListBuku(adrPenulis P);
+adrBuku createElemenBuku(buku X);
+bool isEmptyBuku(adrPenulis P);
+
+void insertFirstBuku(adrPenulis P, adrBuku B);
+void insertLastBuku(adrPenulis P, adrBuku B);
+void insertAfterBuku(adrPenulis P, adrBuku prec, adrBuku B);
+
+void deleteFirstBuku(adrPenulis P, adrBuku &B);
+void deleteLastBuku(adrPenulis P, adrBuku &B);
+void deleteAfterBuku(adrPenulis P, adrBuku prec, adrBuku &B);
+
+adrBuku findElemenBuku(adrPenulis P, string idBuku);
+void viewBuku(adrPenulis P);
+
+#endif // MLL_H_INCLUDED
+
 
 
 

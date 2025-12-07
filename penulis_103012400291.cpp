@@ -1,18 +1,19 @@
 #include "Mll.h"
 
-void createListPenulis(ListPenulis &L){
+void createListPenulis(listPenulis &L){
     L.first = nullptr;
 }
-adrpenulis createElmPenulis(string idPenulis, string namaPenulis, int bukuTerbit){
-    adrpenulis P = new elmlistPenulis;
-    P->info.idpenulis = idPenulis;
-    P->info.namapenulis= namaPenulis;
-    P->info.bukuterbit=bukuTerbit;
+adrPenulis createElemenPenulis(penulis X){
+    adrPenulis P = new elemenPenulis;
+
+    P->infoPenulis = X;
     P->next = nullptr;
-    P->firstBook = nullptr;
+    P->firstBuku = nullptr;
+    P->lastBuku = nullptr;
+
     return P;
 }
-void insertFirstPenulis(ListPenulis &L, adrpenulis P){
+void insertFirstPenulis(listPenulis &L, adrPenulis P){
     if (L.first == nullptr) {
         L.first = P;
     } else {
@@ -20,8 +21,8 @@ void insertFirstPenulis(ListPenulis &L, adrpenulis P){
         L.first = P;
     }
 }
-void insertLastPenulis(ListPenulis &L, adrpenulis P){
-    adrpenulis q;
+void insertLastPenulis(listPenulis &L, adrPenulis P){
+    adrPenulis q;
     if (L.first == nullptr) {
         L.first = P;
     } else {
@@ -32,7 +33,7 @@ void insertLastPenulis(ListPenulis &L, adrpenulis P){
         q->next = P;
     }
 }
-void insertAfterPenulis(ListPenulis &L, adrpenulis prec, adrpenulis P){
+void insertAfterPenulis(listPenulis &L, adrPenulis prec, adrPenulis P){
     if (L.first == nullptr) {
         L.first = P;
     } else {
@@ -40,10 +41,10 @@ void insertAfterPenulis(ListPenulis &L, adrpenulis prec, adrpenulis P){
         prec->next = P;
     }
 }
-adrpenulis findPenulis(ListPenulis L, string idpenulis){
-    adrpenulis P = L.first;
+adrPenulis findElemenPenulis(listPenulis L, string idPenulis){
+    adrPenulis P = L.first;
     while (P != nullptr) {
-        if (P->info.idpenulis == idpenulis) {
+        if (P->infoPenulis.idPenulis == idPenulis) {
             return P;
         }
         P = P->next;

@@ -52,7 +52,7 @@ void deleteAfterPenulis(listPenulis &L, adrPenulis prec, adrPenulis &O){
     }
 }
 
-void viewParent(listPenulis L){
+void viewPenulis(listPenulis L){
     if(L.first == nullptr){
         cout << "List Penulis kosong." << endl;
     } 
