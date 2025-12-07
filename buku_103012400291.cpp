@@ -20,7 +20,6 @@ void deleteFirstBuku(adrpenulis P, adrBuku &B) {
         P->info.bukuterbit--;
     }
 }
-}
 void deleteLastBuku(adrpenulis P,adrBuku &B){
 
     if (P == nullptr || P->firstBook == nullptr) {
