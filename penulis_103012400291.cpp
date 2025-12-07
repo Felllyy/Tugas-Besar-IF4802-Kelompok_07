@@ -1,15 +1,15 @@
-#include "Mll.h"
-
+#include "MLL.h"
+using namespace std;
 void createListPenulis(listPenulis &L){
     L.first = nullptr;
 }
-adrpenulis createElmPenulis(string idPenulis, string namaPenulis, int bukuTerbit){
-    adrpenulis P = new elmlistPenulis;
-    P->info.idpenulis = idPenulis;
-    P->info.namapenulis= namaPenulis;
-    P->info.bukuterbit=bukuTerbit;
+adrPenulis createElemenPenulis(string idPenulis, string namaPenulis, int bukuTerbit){
+    adrPenulis P = new elemenPenulis;
+    P->infoPenulis.idPenulis = idPenulis;
+    P->infoPenulis.nama= namaPenulis;
+    P->infoPenulis.bukuTerbit=bukuTerbit;
     P->next = nullptr;
-    P->firstBook = nullptr;
+    P->firstBuku = nullptr;
     return P;
 }
 

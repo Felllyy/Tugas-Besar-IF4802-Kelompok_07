@@ -1,5 +1,5 @@
-#include "Mll.h"
-
+#include "MLL.h"
+using namespace std;
 bool isEmptyPenulis(listPenulis L){
     return L.first == nullptr;
 }

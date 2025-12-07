@@ -1,5 +1,5 @@
-#include "Mll.h"
-
+#include "MLL.h"
+using namespace std;
 void createListBuku(adrPenulis P){
     P->firstBuku = nullptr;
     P->lastBuku  = nullptr;

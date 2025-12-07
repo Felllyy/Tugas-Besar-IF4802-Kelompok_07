@@ -1,4 +1,5 @@
-#include "Mll.h"
+#include "MLL.h"
+using namespace std;
 void deleteFirstBuku(adrPenulis P, adrBuku &B) {
     B = nullptr;
 
@@ -17,7 +18,7 @@ void deleteFirstBuku(adrPenulis P, adrBuku &B) {
         }
         B->next = nullptr;
         B->prev = nullptr;
-        P->info.bukuTerbit--;
+        P->infoPenulis.bukuTerbit--;
     }
 }
 void deleteLastBuku(adrPenulis P,adrBuku &B){
@@ -41,7 +42,7 @@ void deleteLastBuku(adrPenulis P,adrBuku &B){
 
         B->prev = nullptr;
         B->next = nullptr;
-        P->info.bukuTerbit--;
+        P->infoPenulis.bukuTerbit--;
     }
 }
 void deleteAfterBuku(adrPenulis P, adrBuku prec, adrBuku &B){
@@ -70,6 +71,6 @@ void deleteAfterBuku(adrPenulis P, adrBuku prec, adrBuku &B){
         }
         B->next = nullptr;
         B->prev = nullptr;
-        P->info.bukuTerbit--;
+        P->infoPenulis.bukuTerbit--;
     }
 }
