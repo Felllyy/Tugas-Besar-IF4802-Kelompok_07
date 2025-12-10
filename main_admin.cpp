@@ -17,17 +17,13 @@ void mainAdmin(listPenulis &L) {
         cout << "Pilih: ";
         cin >> pilihan;
 
-        // =============================
-        // 1. TAMBAH PENULIS
-        // =============================
         if (pilihan == 1) {
             string idP, namaP;
             int terbit;
 
             cout << "Masukkan ID Penulis: ";
             cin >> idP;
-
-            // ID harus unik
+            //cari id yang sama
             while (findElemenPenulis(L, idP) != nullptr) {
                 cout << "ID sudah ada! Masukkan ID lain: ";
                 cin >> idP;
@@ -46,10 +42,7 @@ void mainAdmin(listPenulis &L) {
 
             cout << "Penulis berhasil ditambahkan!\n";
         }
-
-        // =============================
-        // 2. TAMBAH BUKU
-        // =============================
+            //tambah
         else if (pilihan == 2) {
             string idP, idB, judul;
             int tahun;
@@ -84,10 +77,7 @@ void mainAdmin(listPenulis &L) {
                 cout << "Buku berhasil ditambahkan!\n";
             }
         }
-
-        // =============================
-        // 3. DELETE FIRST BUKU
-        // =============================
+    //deletefirst
         else if (pilihan == 3) {
             string idP;
             cout << "ID Penulis: ";
@@ -103,9 +93,7 @@ void mainAdmin(listPenulis &L) {
             }
         }
 
-        // =============================
-        // 4. DELETE LAST BUKU
-        // =============================
+        //deletelast
         else if (pilihan == 4) {
             string idP;
             cout << "ID Penulis: ";
@@ -121,9 +109,7 @@ void mainAdmin(listPenulis &L) {
             }
         }
 
-        // =============================
-        // 5. DELETE AFTER BUKU
-        // =============================
+        //deleteafter
         else if (pilihan == 5) {
             string idP, precID;
             cout << "ID Penulis: ";
@@ -149,16 +135,12 @@ void mainAdmin(listPenulis &L) {
             }
         }
 
-        // =============================
-        // 6. VIEW SEMUA PENULIS
-        // =============================
+       //viewpenulis
         else if (pilihan == 6) {
             viewPenulis(L);
         }
 
-        // =============================
-        // 7. VIEW SEMUA BUKU DARI PENULIS
-        // =============================
+        //viewbukudaripenulis
         else if (pilihan == 7) {
             string idP;
             cout << "Masukkan ID Penulis: ";
