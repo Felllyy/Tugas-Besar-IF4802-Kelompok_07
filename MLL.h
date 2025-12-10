@@ -72,6 +72,9 @@ void viewBuku(adrPenulis P);
 //studycase
 void deleteStockBuku(listPenulis &L,string idPenulis, string idBuku);
 
+//main
+void mainAdmin(listPenulis &L);
+
 #endif // MLL_H_INCLUDED
 
 
