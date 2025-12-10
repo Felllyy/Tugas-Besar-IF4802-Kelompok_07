@@ -70,7 +70,7 @@ adrBuku findElemenBuku(adrPenulis P, string idBuku);
 void viewBuku(adrPenulis P);
 
 //studycase
-void deletestock(listPenulis &L,string idPenulis, string idBuku);
+void deleteStockBuku(listPenulis &L,string idPenulis, string idBuku);
 
 #endif // MLL_H_INCLUDED
 
