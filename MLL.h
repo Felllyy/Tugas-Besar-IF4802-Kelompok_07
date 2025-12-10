@@ -28,8 +28,8 @@ struct elemenBuku {
 struct elemenPenulis {
     penulis infoPenulis;
     adrPenulis next;
-    adrBuku firstBuku;
-    adrBuku lastBuku;
+    adrBuku firstBook;
+    adrBuku lastBook;
 };
 
 struct listPenulis {
