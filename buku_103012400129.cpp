@@ -21,7 +21,7 @@ void insertFirstBuku(adrPenulis P, adrBuku B){
         P->lastBook = B;
     } 
     else {
-        B->next = P->firstBuku;
+        B->next = P->firstBook;
         P->firstBook->prev = B;
         P->firstBook = B;
     }
