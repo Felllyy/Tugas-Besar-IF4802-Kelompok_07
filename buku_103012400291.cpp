@@ -74,3 +74,33 @@ void deleteAfterBuku(adrPenulis P, adrBuku prec, adrBuku &B){
         P->infoPenulis.bukuTerbit--;
     }
 }
+//pinjam buku hapus stock di datanya
+void deletestock(listPenulis &L,string idPenulis, string idBuku){
+    adrPenulis P;
+    adrBuku B;
+    //cari si penulis dulu
+    P=findElemenPenulis(L,idPenulis);
+    if (P==nullptr){
+        cout<<"Penulis tidak ditemukan"<<endl;
+
+    }else{
+        //cari buku
+        B=findElemenBuku(P,idBuku);
+        if (B==nullptr){
+            cout<<"Buku tidak ditemukan!"<<endl;
+        }else{
+            //hapus berdasarkan tempatnya
+            if (B == P->firstBuku) {
+                deleteFirstBuku(P, B);
+            }
+            else if (B == P->lastBuku) {
+                deleteLastBuku(P, B);
+            }
+            else {
+                deleteAfterBuku(P, B->prev, B);
+            }
+            cout << "Buku dengan ID " << idBuku << " berhasil dihapus." << endl;
+        }
+    }
+}
+
