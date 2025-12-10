@@ -1,8 +1,8 @@
 #include "MLL.h"
 using namespace std;
 void createListBuku(adrPenulis P){
-    P->firstBuku = nullptr;
-    P->lastBuku  = nullptr;
+    P->firstBook = nullptr;
+    P->lastBook  = nullptr;
 }
 
 adrBuku createElmBuku(string idBuku, string judulBuku, int tahunTerbit){
@@ -16,26 +16,26 @@ adrBuku createElmBuku(string idBuku, string judulBuku, int tahunTerbit){
 }
 
 void insertFirstBuku(adrPenulis P, adrBuku B){
-    if(P->firstBuku == nullptr){
-        P->firstBuku = B;
-        P->lastBuku  = B;
+    if(P->firstBook == nullptr){
+        P->firstBook = B;
+        P->lastBook = B;
     } 
     else {
         B->next = P->firstBuku;
-        P->firstBuku->prev = B;
-        P->firstBuku = B;
+        P->firstBook->prev = B;
+        P->firstBook = B;
     }
 }
 
 void insertLastBuku(adrPenulis P, adrBuku B){
-    if(P->firstBuku == nullptr){
-        P->firstBuku = B;
-        P->lastBuku  = B;
+    if(P->firstBook == nullptr){
+        P->firstBook = B;
+        P->lastBook  = B;
     } 
     else {
-        B->prev = P->lastBuku;
-        P->lastBuku->next = B;
-        P->lastBuku = B;
+        B->prev = P->lastBook;
+        P->lastBook->next = B;
+        P->lastBook = B;
     }
 }
 
@@ -47,7 +47,7 @@ void insertAfterBuku(adrPenulis P, adrBuku prec, adrBuku B){
         if(prec->next != nullptr){
             prec->next->prev = B;
         } else {
-            P->lastBuku = B;
+            P->lastBook = B;
         }
 
         prec->next = B;
@@ -55,7 +55,7 @@ void insertAfterBuku(adrPenulis P, adrBuku prec, adrBuku B){
 }
 
 adrBuku findElemenBuku(adrPenulis P, string id){
-    adrBuku B = P->firstBuku;
+    adrBuku B = P->firstBook;
     while(B != nullptr){
         if(B->infoBuku.idBuku == id){
             break;
@@ -69,7 +69,7 @@ void viewBuku(adrPenulis P){
     if(P == nullptr){
         cout << "Data penulis tidak ditemukan." << endl;
     }
-    else if(P->firstBuku == nullptr){
+    else if(P->firstBook == nullptr){
         cout << "Penulis " << P->infoPenulis.nama 
              << " belum memiliki buku." << endl;
     }
@@ -77,7 +77,7 @@ void viewBuku(adrPenulis P){
         cout << "Daftar Buku dari Penulis: " << P->infoPenulis.nama << endl;
         cout << "==================================" << endl;
 
-        adrBuku B = P->firstBuku;
+        adrBuku B = P->firstBook;
         int i = 1;
 
         while(B != nullptr){
