@@ -74,7 +74,7 @@ void deleteStockBuku(listPenulis &L,string idPenulis, string idBuku);
 
 //main
 void mainAdmin(listPenulis &L);
-
+void mainUser(listPenulis &L);
 #endif // MLL_H_INCLUDED
 
 
