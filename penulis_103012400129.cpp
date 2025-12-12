@@ -70,9 +70,9 @@ void viewPenulis(listPenulis L){
             // Menghitung jumlah buku
             int count = 0;
             adrBuku B = P->firstBuku;
+            cout << "==================================" << endl;
             while(B != nullptr){
             count++;
-            cout << "==================================" << endl;
             cout << "  ID Buku : " << B->infoBuku.idBuku << endl;
             cout << "   Judul  : " << B->infoBuku.judul << endl;
             cout << "   Tahun  : " << B->infoBuku.tahunTerbit << endl;
