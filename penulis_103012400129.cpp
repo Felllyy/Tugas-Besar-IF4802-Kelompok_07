@@ -55,7 +55,7 @@ void deleteAfterPenulis(listPenulis &L, adrPenulis prec, adrPenulis &O){
 void viewPenulis(listPenulis L){
     if(L.first == nullptr){
         cout << "List Penulis kosong." << endl;
-    } 
+    }
     else {
         adrPenulis P = L.first;
         int i = 1;
@@ -71,7 +71,12 @@ void viewPenulis(listPenulis L){
             int count = 0;
             adrBuku B = P->firstBuku;
             while(B != nullptr){
-                count++;
+            count++;
+            cout << "==================================" << endl;
+            cout << "  ID Buku : " << B->infoBuku.idBuku << endl;
+            cout << "   Judul  : " << B->infoBuku.judul << endl;
+            cout << "   Tahun  : " << B->infoBuku.tahunTerbit << endl;
+            cout << "----------------------------------" << endl;
                 B = B->next;
             }
 
