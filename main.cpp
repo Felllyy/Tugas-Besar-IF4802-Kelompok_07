@@ -2,9 +2,11 @@
 #include "MLL.h"
 using namespace std;
 
+extern 
+
 int main() {
     int pilih;
-
+    listPenulis L;
     do {
         cout << "\n=========== MAIN MENU ===========\n";
         cout << "1. Menu Admin\n";
@@ -28,4 +30,3 @@ int main() {
     return 0;
 }
 
-}

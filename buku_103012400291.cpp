@@ -75,7 +75,7 @@ void deleteAfterBuku(adrPenulis P, adrBuku prec, adrBuku &B){
     }
 }
 //pinjam buku hapus stock di datanya
-void deletestock(listPenulis &L,string idPenulis, string idBuku){
+void deleteStockBuku(listPenulis &L,string idPenulis, string idBuku){
     adrPenulis P;
     adrBuku B;
     //cari si penulis dulu
@@ -103,4 +103,26 @@ void deletestock(listPenulis &L,string idPenulis, string idBuku){
         }
     }
 }
+
+// pengembalian buku ke data
+void returnStockBuku(listPenulis &L, string idPenulis, string idBuku, string judul,int tahunTerbit){
+    adrPenulis P = findElemenPenulis(L, idPenulis);
+
+    if (P == nullptr) {
+        cout << "Penulis tidak ditemukan!" << endl;
+        return;
+    }
+
+    adrBuku cek = findElemenBuku(P, idBuku);
+    if (cek != nullptr) {
+        cout << "Buku dengan ID tersebut sudah ada di data!" << endl;
+        return;
+    }
+
+    adrBuku Q = createElmBuku(idBuku, judul, tahunTerbit);
+    insertLastBuku(P, Q);
+    P->infoPenulis.bukuTerbit++;
+    cout << "Buku berhasil dikembalikan ke data." << endl;
+}
+
 

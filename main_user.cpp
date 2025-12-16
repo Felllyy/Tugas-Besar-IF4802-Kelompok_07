@@ -36,8 +36,22 @@ void mainUser(listPenulis &L) {
             }
         }
         else if (pilihan==3){
+            string idP, idB, judul;
+            int tahun;
 
+            cout << "ID Penulis: ";
+            cin >> idP;
 
+            cout << "ID Buku: ";
+            cin >> idB;
+
+            cout << "Judul Buku: ";
+            cin >> judul;
+
+            cout << "Tahun Terbit: ";
+            cin >> tahun;
+
+            returnStockBuku(L, idP, idB, judul, tahun);
 
         }
         else if (pilihan==4){

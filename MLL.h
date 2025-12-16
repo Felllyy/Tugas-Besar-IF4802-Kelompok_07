@@ -71,6 +71,7 @@ void viewBuku(adrPenulis P);
 
 //studycase
 void deleteStockBuku(listPenulis &L,string idPenulis, string idBuku);
+void returnStockBuku(listPenulis &L, string idPenulis, string idBuku, string judul, int tahunTerbit);
 
 //main
 void mainAdmin(listPenulis &L);

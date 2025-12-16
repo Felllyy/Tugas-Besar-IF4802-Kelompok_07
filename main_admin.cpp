@@ -4,7 +4,6 @@ using namespace std;
 
 void mainAdmin(listPenulis &L) {
     int pilihan;
-
     do {
         cout << "\n=========== MENU ADMIN ===========\n";
         cout << "1. CreateListPenulis\n";
