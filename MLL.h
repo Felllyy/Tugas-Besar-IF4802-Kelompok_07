@@ -6,6 +6,7 @@ using namespace std;
 
 typedef struct elemenBuku *adrBuku;
 typedef struct elemenPenulis *adrPenulis;
+const int MAX_PINJAM = 100;
 
 struct buku {
     string idBuku;
@@ -35,7 +36,10 @@ struct elemenPenulis {
 struct listPenulis {
     adrPenulis first;
 };
-
+struct arrayPinjam {
+    dataPinjam data[MAX_PINJAM];
+    int n;
+};
 
 // Parent : Penulis
 void createListPenulis(listPenulis &L);
@@ -70,12 +74,12 @@ adrBuku findElemenBuku(adrPenulis P, string idBuku);
 void viewBuku(adrPenulis P);
 
 //studycase
-void deleteStockBuku(listPenulis &L,string idPenulis, string idBuku);
-void returnStockBuku(listPenulis &L, string idPenulis, string idBuku, string judul, int tahunTerbit);
-
+void deleteStockBuku(listPenulis &L, arrayPinjam &AP,string idPenulis, string idBuku);
+void returnStockBuku(listPenulis &L, arrayPinjam &AP,string idPenulis, string idBuku);
+void createArrayPinjam(arrayPinjam &AP);
 //main
 void mainAdmin(listPenulis &L);
-void mainUser(listPenulis &L);
+void mainUser(listPenulis &L, arrayPinjam &AP);
 #endif // MLL_H_INCLUDED
 
 
