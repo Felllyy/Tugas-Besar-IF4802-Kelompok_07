@@ -19,7 +19,7 @@ int main() {
             mainAdmin(L);
         }
         else if (pilih == 2) {
-            mainUser(L);
+            mainUser(L,AP);
         }
         else if (pilih == 0) {
             cout << "Program selesai.\n";
