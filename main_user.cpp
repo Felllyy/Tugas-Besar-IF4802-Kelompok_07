@@ -2,7 +2,7 @@
 #include "MLL.h"
 using namespace std;
 
-void mainUser(listPenulis &L) {
+void mainUser(listPenulis &L, arrayPinjam &AP) {
     int pilihan;
 
     do {
@@ -24,40 +24,32 @@ void mainUser(listPenulis &L) {
             cin >> n;
 
             for (int i = 0; i < n; i++) {
-                cout << "\nPinjam buku ke-" << (i+1) << endl;
+                cout << "\nPinjam buku ke-" << (i + 1) << endl;
                 string idP, idB;
 
-                cout << "ID Penulis: ";
+                cout << "ID Penulis : ";
                 cin >> idP;
-                cout << "ID Buku: ";
+                cout << "ID Buku    : ";
                 cin >> idB;
 
-                deleteStockBuku(L, idP, idB);
+                deleteStockBuku(L, AP, idP, idB);
             }
         }
-        else if (pilihan==3){
-            string idP, idB, judul;
-            int tahun;
+        else if (pilihan == 3) {
+            string idP, idB;
 
-            cout << "ID Penulis: ";
+            cout << "ID Penulis : ";
             cin >> idP;
-
-            cout << "ID Buku: ";
+            cout << "ID Buku    : ";
             cin >> idB;
 
-            cout << "Judul Buku: ";
-            cin >> judul;
-
-            cout << "Tahun Terbit: ";
-            cin >> tahun;
-
-            returnStockBuku(L, idP, idB, judul, tahun);
-
+            returnStockBuku(L, AP, idP, idB);
         }
-        else if (pilihan==4){
+        else if (pilihan == 4) {
             string idP;
             cout << "Masukkan ID Penulis: ";
             cin >> idP;
+
             adrPenulis P = findElemenPenulis(L, idP);
             if (P == nullptr) {
                 cout << "Penulis tidak ditemukan!\n";
@@ -68,7 +60,9 @@ void mainUser(listPenulis &L) {
         else if (pilihan == 0) {
             cout << "Keluar dari menu user...\n";
         }
+        else {
+            cout << "Pilihan tidak valid!\n";
+        }
 
     } while (pilihan != 0);
 }
-
