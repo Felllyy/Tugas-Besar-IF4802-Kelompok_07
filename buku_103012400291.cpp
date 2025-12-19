@@ -4,7 +4,7 @@ void deleteFirstBuku(adrPenulis P, adrBuku &B) {
     B = nullptr;
 
     if (P->firstBuku == nullptr) {
-        cout << "Error: List Buku kosong." << endl;
+        cout << "List Buku kosong." << endl;
 
     } else {
         adrBuku currentB = P->firstBuku;
@@ -18,13 +18,12 @@ void deleteFirstBuku(adrPenulis P, adrBuku &B) {
         }
         B->next = nullptr;
         B->prev = nullptr;
-        P->infoPenulis.bukuTerbit--;
     }
 }
 void deleteLastBuku(adrPenulis P,adrBuku &B){
 
     if (P == nullptr || P->firstBuku == nullptr) {
-        cout << "Error: Penulis tidak valid atau List Buku kosong." << endl;
+        cout << "Penulis tidak valid atau List Buku kosong." << endl;
     } else {
         adrBuku currentB = P->firstBuku;
         while (currentB ->next != nullptr) {
@@ -42,20 +41,19 @@ void deleteLastBuku(adrPenulis P,adrBuku &B){
 
         B->prev = nullptr;
         B->next = nullptr;
-        P->infoPenulis.bukuTerbit--;
     }
 }
 void deleteAfterBuku(adrPenulis P, adrBuku prec, adrBuku &B){
     bool canDelete = true;
 
     if (P == nullptr || P->firstBuku == nullptr) {
-        cout << "Error: List kosong atau Penulis tidak valid." << endl;
+        cout << "List kosong atau Penulis tidak valid." << endl;
         canDelete = false;
     } else if (prec == nullptr) {
-        cout << "Error: Predecessor (prec) tidak ditemukan." << endl;
+        cout << "Predecessor (prec) tidak ditemukan." << endl;
         canDelete = false;
     } else if (prec->next == nullptr) {
-        cout << "Error: Tidak ada elemen setelah predecessor." << endl;
+        cout << "Tidak ada elemen setelah predecessor." << endl;
         canDelete = false;
     }
 
@@ -71,7 +69,6 @@ void deleteAfterBuku(adrPenulis P, adrBuku prec, adrBuku &B){
         }
         B->next = nullptr;
         B->prev = nullptr;
-        P->infoPenulis.bukuTerbit--;
     }
 }
 //pinjam buku hapus stock di datanya
@@ -146,7 +143,6 @@ void returnStockBuku(listPenulis &L, arrayPinjam &AP,string idPenulis, string id
     );
 
     insertLastBuku(P, B);
-    P->infoPenulis.bukuTerbit++;
 
     // HAPUS DATA DARI ARRAY PINJAM
     for (int i = idx; i < AP.n - 1; i++) {
@@ -159,5 +155,6 @@ void returnStockBuku(listPenulis &L, arrayPinjam &AP,string idPenulis, string id
 void createArrayPinjam(arrayPinjam &AP) {
     AP.n = 0;
 }
+
 
 
