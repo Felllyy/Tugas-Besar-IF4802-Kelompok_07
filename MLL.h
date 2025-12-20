@@ -1,12 +1,22 @@
-#ifndef MLL_H_INCLUDED
-#define MLL_H_INCLUDED
-
 #include <iostream>
 using namespace std;
 
 typedef struct elemenBuku *adrBuku;
 typedef struct elemenPenulis *adrPenulis;
 const int MAX_PINJAM = 100;
+
+struct dataPinjam {
+    string idPenulis;
+    string idBuku;
+    string judul;
+    int tahunTerbit;
+};
+
+struct arrayPinjam {
+    dataPinjam data[MAX_PINJAM];
+    int n;
+};
+
 
 struct buku {
     string idBuku;
@@ -36,11 +46,10 @@ struct elemenPenulis {
 struct listPenulis {
     adrPenulis first;
 };
-struct arrayPinjam {
-    dataPinjam data[MAX_PINJAM];
-    int n;
-};
 
+//main
+void mainAdmin(listPenulis &L);
+void mainUser(listPenulis &L, arrayPinjam &AP);
 // Parent : Penulis
 void createListPenulis(listPenulis &L);
 adrPenulis createElemenPenulis(string idPenulis, string namaPenulis, int bukuTerbit);
@@ -77,11 +86,3 @@ void viewBuku(adrPenulis P);
 void deleteStockBuku(listPenulis &L, arrayPinjam &AP,string idPenulis, string idBuku);
 void returnStockBuku(listPenulis &L, arrayPinjam &AP,string idPenulis, string idBuku);
 void createArrayPinjam(arrayPinjam &AP);
-//main
-void mainAdmin(listPenulis &L);
-void mainUser(listPenulis &L, arrayPinjam &AP);
-#endif // MLL_H_INCLUDED
-
-
-
-
